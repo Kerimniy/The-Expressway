@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="StyleBoxLine" id=2]
+content_margin_left = 7.0
+color = Color( 1, 0, 0, 1 )
+grow_begin = 20.0
+grow_end = 20.0
+thickness = 10
+vertical = true
+
+[sub_resource type="StyleBoxLine" id=3]
+content_margin_left = 7.0
+color = Color( 0.439216, 0, 0, 1 )
+grow_begin = 20.0
+grow_end = 20.0
+thickness = 10
+vertical = true
+
+[sub_resource type="StyleBoxLine" id=4]
+content_margin_left = 7.0
+color = Color( 1, 0, 0, 1 )
+grow_begin = 20.0
+grow_end = 20.0
+thickness = 10
+vertical = true
+
+[resource]
+HScrollBar/icons/decrement = SubResource( 1 )
+HScrollBar/icons/decrement_highlight = SubResource( 1 )
+HScrollBar/icons/decrement_pressed = SubResource( 1 )
+HScrollBar/icons/increment = SubResource( 1 )
+HScrollBar/icons/increment_highlight = SubResource( 1 )
+HScrollBar/icons/increment_pressed = SubResource( 1 )
+HScrollBar/styles/grabber = SubResource( 2 )
+HScrollBar/styles/grabber_highlight = SubResource( 3 )
+HScrollBar/styles/grabber_pressed = SubResource( 4 )
+HScrollBar/styles/scroll = null
+HScrollBar/styles/scroll_focus = null

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Main_menu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/fon/фонис.png" type="Texture" id=2]
+[ext_resource path="res://Style/Themes/Main_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Sounds/Sounds.tscn" type="PackedScene" id=4]
+
+[node name="Main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="фонис" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Play" type="Button" parent="."]
+margin_left = 595.0
+margin_top = 275.0
+margin_right = 1070.0
+margin_bottom = 365.0
+theme = ExtResource( 3 )
+text = "id_play"
+
+[node name="Settings" type="Button" parent="."]
+margin_left = 595.0
+margin_top = 375.0
+margin_right = 1070.0
+margin_bottom = 465.0
+theme = ExtResource( 3 )
+text = "id_settings"
+
+[node name="About_Game" type="Button" parent="."]
+margin_left = 595.0
+margin_top = 475.0
+margin_right = 1070.0
+margin_bottom = 565.0
+theme = ExtResource( 3 )
+text = "id_about"
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 595.0
+margin_top = 575.0
+margin_right = 1070.0
+margin_bottom = 665.0
+theme = ExtResource( 3 )
+text = "id_quit"
+
+[node name="Sounds" parent="." instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="About_Game" to="." method="_on_About_Game_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

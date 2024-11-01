@@ -1,0 +1,158 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Style/Fonts/Default_Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/fon/fon1.png" type="Texture" id=2]
+[ext_resource path="res://Style/Themes/Check_button.tres" type="Theme" id=3]
+[ext_resource path="res://Scripts/Settings.gd" type="Script" id=4]
+[ext_resource path="res://Style/Themes/Main_Theme.tres" type="Theme" id=5]
+[ext_resource path="res://Sounds/Sounds.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sounds/Music/Button_sfx.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Sprites/For_HScroll/00.png" type="Texture" id=8]
+[ext_resource path="res://Style/Themes/HScrollbar_Theme.tres" type="Theme" id=9]
+[ext_resource path="res://Style/Шрифты/calibri.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Sprites/For_HScroll/RUS.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.372549, 0, 0, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 1
+outline_color = Color( 0.407843, 0.156863, 0.156863, 1 )
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_size = 4
+outline_color = Color( 0.407843, 0.156863, 0.156863, 1 )
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.639216, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.843137, 0.6, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.996078, 0.890196, 0.45098, 1 )
+
+[node name="Settings" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Fon1" type="Sprite" parent="."]
+z_index = -3
+texture = ExtResource( 2 )
+centered = false
+
+[node name="v_sync" type="CheckButton" parent="."]
+margin_left = 675.563
+margin_top = 206.725
+margin_right = 1020.56
+margin_bottom = 314.725
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover_pressed = SubResource( 1 )
+text = " V Sync  "
+align = 2
+icon_align = 1
+
+[node name="Main_menu" type="Button" parent="."]
+margin_left = 792.9
+margin_top = 718.064
+margin_right = 1075.9
+margin_bottom = 790.064
+theme = ExtResource( 5 )
+text = "id_return"
+
+[node name="Sounds" parent="." instance=ExtResource( 6 )]
+
+[node name="Button_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 7.373
+bus = "Sfx"
+
+[node name="Sfx" type="HScrollBar" parent="."]
+margin_left = 290.0
+margin_top = 680.0
+margin_right = 740.0
+margin_bottom = 700.0
+theme = ExtResource( 9 )
+min_value = -24.0
+max_value = 2.0
+value = -11.0
+
+[node name="01" type="Sprite" parent="Sfx"]
+position = Vector2( 100, 9.5 )
+scale = Vector2( 0.365303, 0.160545 )
+z_index = -1
+texture = ExtResource( 8 )
+
+[node name="s_txt" type="Label" parent="Sfx"]
+anchor_right = 0.195
+margin_left = -248.0
+margin_top = -3.0
+margin_right = -90.75
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
+text = "id_S_txt"
+align = 1
+valign = 1
+
+[node name="Music" type="HScrollBar" parent="."]
+margin_left = 290.0
+margin_top = 750.0
+margin_right = 740.0
+margin_bottom = 770.0
+theme = ExtResource( 9 )
+min_value = -30.0
+max_value = 0.0
+value = -15.0
+
+[node name="00" type="Sprite" parent="Music"]
+position = Vector2( 100, 9.5 )
+scale = Vector2( 0.365303, 0.160545 )
+z_index = -1
+texture = ExtResource( 8 )
+
+[node name="m_txt" type="Label" parent="Music"]
+anchor_right = 0.195
+margin_left = -249.655
+margin_top = -2.7818
+margin_right = -92.4046
+margin_bottom = 25.2182
+custom_fonts/font = SubResource( 2 )
+text = "id_M_txt"
+align = 1
+valign = 1
+
+[node name="Settings_label" type="Label" parent="."]
+margin_right = 1101.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 3 )
+text = "id_settings"
+align = 1
+valign = 1
+
+[node name="Local" type="Button" parent="."]
+margin_left = 37.0
+margin_top = 213.0
+margin_right = 471.0
+margin_bottom = 321.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Русский"
+icon = ExtResource( 11 )
+
+[connection signal="pressed" from="v_sync" to="." method="_on_v_sync_pressed"]
+[connection signal="pressed" from="Main_menu" to="." method="_on_Main_menu_pressed"]
+[connection signal="value_changed" from="Sfx" to="." method="_on_Sfx_value_changed"]
+[connection signal="value_changed" from="Music" to="." method="_on_Music_value_changed"]
+[connection signal="pressed" from="Local" to="." method="_on_Local_pressed"]

@@ -1,0 +1,18 @@
+id,en,ru,de
+id_play,Play,Играть,Spielen
+id_settings,Settings,Настройки,Einstellungen
+id_about,About game,Об игре,Uber das spiel
+id_quit,Quit,Выйти,Abmelden
+id_S_txt,Sfx,Эффекты,Soundeffecte
+id_M_txt,Music,Музыка,Musik
+id_return,Menu,Меню,Menu
+id_creators,Creators,Создатели,Schopfer
+id_controls,Controls,Управление,Steuerung
+id_restart,Restart,Начать сначала,Neustart
+id_lose,You Lose,Ты Проиграл,Niederlage
+id_left,Left,Влево,Links
+id_right,Right,Вправо,Rechts
+id_km,Kerim Mutalup,Керим Муталуп,
+id_idea,Idea:,Идея:,Idee:
+id_design,Design:,Дизайн:,Design
+id_c,Coding:,Кодинг:,Kodierung

@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Style/Themes/Main_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Style/Fonts/Default_Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/END_SCENE.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Score_scene.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Style/Шрифты/calibri.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sounds/Sounds.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sounds/Music/E_S_M.mp3" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+size = 125
+outline_size = 4
+outline_color = Color( 0.407843, 0.156863, 0.156863, 1 )
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "open_scene"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Background:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0.156863, 0.156863, 0.156863, 1 ) ]
+}
+
+[node name="END_SCENE" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1099.0
+margin_bottom = 800.0
+color = Color( 0.321569, 0.321569, 0.321569, 1 )
+
+[node name="Restart" type="Button" parent="."]
+margin_left = 150.0
+margin_top = 404.639
+margin_right = 950.0
+margin_bottom = 478.639
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "id_restart"
+
+[node name="Main_menu" type="Button" parent="."]
+margin_left = 150.0
+margin_top = 538.274
+margin_right = 950.0
+margin_bottom = 612.274
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "id_return"
+
+[node name="You_Lose" type="Label" parent="."]
+margin_left = -12.0
+margin_top = 182.0
+margin_right = 1087.0
+margin_bottom = 329.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "id_lose"
+align = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/open_scene = SubResource( 1 )
+
+[node name="Score_scene" parent="." instance=ExtResource( 4 )]
+
+[node name="Sounds" parent="." instance=ExtResource( 6 )]
+
+[node name="E_S_M" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "Music"
+
+[connection signal="pressed" from="Restart" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Main_menu" to="." method="_on_Main_menu_pressed"]

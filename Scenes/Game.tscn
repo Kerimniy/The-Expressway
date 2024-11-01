@@ -1,0 +1,59 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Sprites/fon/fon1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/fon/fon2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/fon/fon3.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/fon/fon4.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemy1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Enemy2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemy4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemy3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Score_scene.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/coin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sounds/Sounds.tscn" type="PackedScene" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+centered = false
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 498.762, 611.859 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Enemy1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 152.282, -1000 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 376, -1000 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 698.839, -1000 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 948.756, -1000 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Score_scene" parent="." instance=ExtResource( 11 )]
+
+[node name="coin" parent="." instance=ExtResource( 12 )]
+position = Vector2( 545.829, -87.0889 )
+
+[node name="Sounds" parent="." instance=ExtResource( 13 )]
