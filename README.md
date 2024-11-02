@@ -41,7 +41,7 @@ supports 3 languages: Russian, English, German.
                          Kerim Mutalup.
                       Systemanforderungen:
                 _______________________________
-OS: Windows Vista, Windows 7, Windows 8.1, Windows 10, Windows 11,
+OS:Windows Vista, Windows 7, Windows 8.1, Windows 10, Windows 11,
 Speicher: 100MB auf der Festplatte,
 RAM: 1 GB
                          Beschreibung:
