@@ -23,6 +23,8 @@ OS:Windows Vista, Windows 7,Windows 8.1, Windows 10, Windows 11,
      
 			      v1.0.0.0
 			--- Релиз игры ---
+   			      v1.0.1.0
+    --- Исправление ошибок графики, воспроизведения звука и сохранений---
    
 ***EN***
 
@@ -52,7 +54,8 @@ supports 3 languages: Russian, English, German.
 	       
                  	    v1.0.0.0
                       --- Game Release --- 
-		      
+     		            v1.0.1.0
+    --- Correction of graphics, audio playback and save errors---
 		      
 ***DE***
 
@@ -77,7 +80,10 @@ sammelst Münzen und weichst entgegenkommenden feindlichen Autos aus. Das Spiel
 unterstützt 3 Sprachen: Russisch, Englisch, Deutsch.
 
                            Versionen:
-			   
                ________________________________
-                            v1.0.0.0
-                  --- Spielveröffentlichung --- 
+                            v1.0.0.
+		 --- Spielveröffentlichung --- 		
+                            v1.0.1.0
+    --- Korrektur von Grafik-, Audiowiedergabe- und Speicherfehlern---
+    
+			  
