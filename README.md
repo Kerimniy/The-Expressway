@@ -9,7 +9,7 @@ My first 2D game, my best project, start to make it in September 2024
     
 OS:Windows Vista, Windows 7,Windows 8.1, Windows 10, Windows 11,
 Хранилище: 100мб на диске,
-ОЗУ: 1 Гбю
+ОЗУ: 1 Гб
             		      Описание:
 		    
                  —————————————————————————————————
