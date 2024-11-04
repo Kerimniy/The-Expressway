@@ -28,7 +28,7 @@ var Enemy2_preload = preload("res://Scenes/Enemy2.tscn")
 var Enemy3_preload = preload("res://Scenes/Enemy3.tscn")
 var Enemy4_preload = preload("res://Scenes/Enemy4.tscn")
 
-#Таймер
+
 var time = 2
 var is_ready = true
 var save_path = "user://savings.dat"
