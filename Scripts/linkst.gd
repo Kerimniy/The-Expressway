@@ -4,8 +4,8 @@ var saving_stats= {
 	'v_sync': false,
 	'Sfx_value':  -11,
 	'Music_value': -11,
-	'local_var': 0,
-	'g': 0
+	'local_var': 1,
+	'g': 1
 }
 
 

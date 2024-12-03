@@ -14,3 +14,8 @@ func _process(_delta):
 	move_and_slide(koord)
 	
 	position.x = clamp(position.x, 0, 965)
+
+
+
+
+
